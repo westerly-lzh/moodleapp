@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Name of your app.
-APP="Moodle Desktop"
+APP="Edu Desktop"
 # The path of your app to sign.
-APP_PATH="desktop/dist/mas/Moodle Desktop.app"
+APP_PATH="desktop/dist/mas/Edu Desktop.app"
 # The path to the location you want to put the signed package.
 RESULT_PATH="desktop/dist/mas/$APP.pkg"
 # The name of certificates you requested.

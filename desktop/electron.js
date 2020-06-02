@@ -5,13 +5,13 @@ const path = require('path');
 const url = require('url');
 const fs = require('fs');
 const os = require('os');
-const userAgent = 'MoodleMobile';
+const userAgent = 'EduMobile';
 const isMac = os.platform().indexOf('darwin') != -1;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow,
-    appName = 'Moodle Desktop', // Default value.
+    appName = 'CIACM Edu Desktop', // Default value.
     isReady = false,
     configRead = false;
 
@@ -128,8 +128,8 @@ fs.readFile(path.join(__dirname, 'config.json'), 'utf8', (err, data) => {
     configRead = true;
 
     // Default values.
-    var ssoScheme = 'moodlemobile',
-        appId = 'com.moodle.moodlemobile';
+    var ssoScheme = 'edumobile',
+        appId = 'com.edu.edumobile';
 
     if (!err) {
         try {
@@ -254,7 +254,7 @@ function setAppMenu() {
                     label: 'Docs',
                     accelerator: 'CmdOrCtrl+H',
                     click() {
-                        shell.openExternal('https://docs.moodle.org/en/Moodle_Mobile');
+                        shell.openExternal('https://edu.ciacm.com/local/staticpage/view.php?page=doc');
                     }
                 }
             ]

@@ -24,6 +24,7 @@ $gray-lighter:    #f5f5f5;
 $white:           #ffffff; // Background, reversed text.
 
 $blue:            #0064d2; // Link, background.
+$blue2:           #009fe5;
 $turquoise:       #007982; // Accent.
 $green:           #5e8100; // Accent.
 $red:             #cb3d4d;
@@ -52,7 +53,7 @@ $orange-light:    lighten($orange, 10%) !default;
 $yellow-light:    mix($yellow, white, 20%) !default;
 $yellow-dark:     mix($yellow, black, 40%) !default;
 
-$core-color:          $orange !default;
+$core-color:          $blue2 !default;
 $core-color-light:    lighten($core-color, 10%) !default;
 $core-color-dark:     darken($core-color, 10%) !default;
 
