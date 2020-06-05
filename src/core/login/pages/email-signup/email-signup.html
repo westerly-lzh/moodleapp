@@ -53,7 +53,8 @@
                 <p *ngIf="!siteName" padding class="item-heading">{{siteUrl}}</p>
                 <!-- If sitename, show big sitename and small siteurl. -->
                 <p *ngIf="siteName" padding class="item-heading"><core-format-text [text]="siteName" [filter]="false"></core-format-text></p>
-                <p *ngIf="siteName">{{siteUrl}}</p>
+                <!--hidden url to pass appstore check.-->
+                <!-- <p *ngIf="siteName">{{siteUrl}}</p> -->
             </ion-item>
 
             <!-- Username and password. -->
