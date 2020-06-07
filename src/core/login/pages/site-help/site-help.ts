@@ -33,8 +33,8 @@ export class CoreLoginSiteHelpPage {
             protected translate: TranslateService) {
 
         this.urlImageHtml = '<img src="assets/img/login/faq_url.png" role="presentation">';
-        this.setupLinkHtml = '<a href="https://moodle.com/getstarted/" title="' +
-                this.translate.instant('core.login.faqsetupsitelinktitle') + '">https://moodle.com/getstarted/</a>';
+        this.setupLinkHtml = '<a href="https://edu.ciacm.com/" title="' +
+                this.translate.instant('core.login.faqsetupsitelinktitle') + '">https://edu.ciacm.com/</a>';
     }
 
     /**

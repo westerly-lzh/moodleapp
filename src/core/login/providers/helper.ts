@@ -1198,14 +1198,14 @@ export class CoreLoginHelperProvider {
         let link;
 
         if (this.appProvider.isWindows()) {
-            link = 'https://download.moodle.org/desktop/download.php?platform=windows';
+            link = 'https://edu.ciacm.com/local/staticpage/view.php?page=download';
         } else if (this.appProvider.isLinux()) {
-            link = 'https://download.moodle.org/desktop/download.php?platform=linux&arch=' +
+            link = 'https://edu.ciacm.com/local/staticpage/view.php?page=download' +
                     (this.appProvider.is64Bits() ? '64' : '32');
         } else if (this.appProvider.isMac()) {
             link = 'itms-apps://itunes.apple.com/app/id1255924440';
         } else if (this.platform.is('android')) {
-            link = 'market://details?id=com.moodle.moodlemobile';
+            link = 'market://details?id=com.ciacm.edu';
         } else if (this.platform.is('ios')) {
             link = 'itms-apps://itunes.apple.com/app/id633359593';
         }

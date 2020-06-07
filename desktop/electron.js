@@ -5,7 +5,7 @@ const path = require('path');
 const url = require('url');
 const fs = require('fs');
 const os = require('os');
-const userAgent = 'EduMobile';
+const userAgent = 'CIACMEdu';
 const isMac = os.platform().indexOf('darwin') != -1;
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -128,8 +128,8 @@ fs.readFile(path.join(__dirname, 'config.json'), 'utf8', (err, data) => {
     configRead = true;
 
     // Default values.
-    var ssoScheme = 'edumobile',
-        appId = 'com.edu.edumobile';
+    var ssoScheme = 'edu',
+        appId = 'com.edu.edu';
 
     if (!err) {
         try {

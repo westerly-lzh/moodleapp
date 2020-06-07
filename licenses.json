@@ -2779,14 +2779,6 @@
     "url": "https://github.com/ichernev",
     "licenseFile": "LICENSE"
   },
-  // "moodlemobile@3.8.2": {
-  //   "licenses": "Apache-2.0",
-  //   "repository": "https://github.com/moodlehq/moodlemobile2",
-  //   "publisher": "Moodle Pty Ltd.",
-  //   "email": "mobile@moodle.com",
-  //   "licenseFile": "LICENSE",
-  //   "noticeFile": "NOTICE"
-  // },
   "ms@2.0.0": {
     "licenses": "MIT",
     "repository": "https://github.com/zeit/ms",

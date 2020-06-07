@@ -241,7 +241,7 @@ export class CoreUrlUtilsProvider {
      * @return Promise resolved with the Moodle docs URL.
      */
     getDocsUrl(release?: string, page: string = 'Mobile_app'): Promise<string> {
-        let docsUrl = 'https://edu.ciacm.com/local/staticpage/view.php?page=doc';
+        var docsUrl = 'https://edu.ciacm.com/local/staticpage/view.php?page=doc';
         // let docsUrl = 'https://docs.moodle.org/en/' + page;
 
         // if (typeof release != 'undefined') {

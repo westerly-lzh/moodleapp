@@ -1,11 +1,11 @@
 {
-  "name": "edumobile",
+  "name": "edu",
   "integrations": {
     "cordova": {},
     "gulp": {}
   },
   "type": "ionic-angular",
   "watchPatterns": [],
-  "id": "com.ciacm.edumobile",
-  "prd_id": "com.ciacm.edumobile"
+  "id": "com.ciacm.edu",
+  "prd_id": "com.ciacm.edu"
 }

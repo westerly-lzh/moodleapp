@@ -23,7 +23,7 @@
     <rescap:Capability Name="runFullTrust"/>
   </Capabilities>
   <Applications>
-    <Application Id="com.ciacm.edumobile" Executable="app\Edu Desktop.exe" EntryPoint="Windows.FullTrustApplication">
+    <Application Id="com.ciacm.edu" Executable="app\CIACMEdu Desktop.exe" EntryPoint="Windows.FullTrustApplication">
       <uap:VisualElements
        BackgroundColor="#464646"
        DisplayName="Edu Desktop"
@@ -34,8 +34,8 @@
       </uap:VisualElements>
       <Extensions>
         <uap:Extension Category="windows.protocol">
-          <uap:Protocol Name="edumobile">
-            <uap:DisplayName>CIACM Edu Mobile URI Scheme</uap:DisplayName>
+          <uap:Protocol Name="edu">
+            <uap:DisplayName>CIACMEdu URI Scheme</uap:DisplayName>
           </uap:Protocol>
         </uap:Extension>
       </Extensions>

@@ -1,10 +1,10 @@
 {
-  "name": "edumobile",
+  "name": "edu",
   "version": "3.8.2",
-  "description": "Edu CIACM App",
+  "description": "CIACMEdu App",
   "author": {
-    "name": "CIACM Edu Mobile",
-    "email": "mobile@mciacm.com"
+    "name": "CIACMEdu",
+    "email": "info@mciacm.com"
   },
   "config": {
     "ionic_webpack": "./config/webpack.config.js",
@@ -150,8 +150,8 @@
   "cordova": {
     "platforms": [
       "browser",
-      "android",
-      "ios"
+      "ios",
+      "android"
     ],
     "plugins": {
       "com-darryncampbell-cordova-plugin-intent": {},
@@ -165,7 +165,7 @@
         "PHOTOLIBRARY_USAGE_DESCRIPTION": "We need photo library access to get pictures from there so you can attach them as part of your submissions."
       },
       "cordova-plugin-customurlscheme": {
-        "URL_SCHEME": "edumobile"
+        "URL_SCHEME": "edu"
       },
       "cordova-plugin-device": {},
       "cordova-plugin-file": {},
@@ -221,9 +221,9 @@
     },
     "protocols": [
       {
-        "name": "CIACM EDU Mobile URL",
+        "name": "CIACMEdu URL",
         "schemes": [
-          "edumobile"
+          "edu"
         ],
         "role": "Viewer"
       }

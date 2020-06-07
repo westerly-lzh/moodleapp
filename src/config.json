@@ -1,7 +1,7 @@
 {
-    "app_id": "com.ciacm.edumobile",
-    "appname": "EduMobile",
-    "desktopappname": "EduDesktop",
+    "app_id": "com.ciacm.edu",
+    "appname": "CIACMEdu",
+    "desktopappname": "CIACMEdu",
     "versioncode": 3820,
     "versionname": "3.8.2",
     "cache_update_frequency_usually": 420000,
@@ -22,8 +22,8 @@
         75.89,
         93.75
     ],
-    "customurlscheme": "edumobile",
-    "siteurl": "http://edu.ciacm.com",
+    "customurlscheme": "edu",
+    "siteurl": "https://edu.ciacm.com",
     "sitename": "CIACM Education ",
     "multisitesdisplay": "",
     "skipssoconfirmation": false,

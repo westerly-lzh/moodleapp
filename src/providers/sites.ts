@@ -963,9 +963,9 @@ export class CoreSitesProvider {
                 } else if (config.tool_mobile_setuplink) {
                     downloadUrl = config.tool_mobile_setuplink;
                 } else if (this.appProvider.isMobile()) {
-                    downloadUrl = 'https://download.moodle.org/mobile/';
+                    downloadUrl = 'https://edu.ciacm.com/local/staticpage/view.php?page=download';
                 } else {
-                    downloadUrl = 'https://download.moodle.org/desktop/';
+                    downloadUrl = 'https://edu.ciacm.com/local/staticpage/view.php?page=download';
                 }
 
                 siteId = siteId || this.getCurrentSiteId();
