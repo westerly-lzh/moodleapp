@@ -17,7 +17,7 @@
     <key>PLIST_VERSION</key>
     <string>1</string>
     <key>BUNDLE_ID</key>
-    <string>com.ciacm.edu</string>
+    <string>com.ciacm.CIACMEdu</string>
     <key>PROJECT_ID</key>
     <string>edu-push</string>
     <key>STORAGE_BUCKET</key>

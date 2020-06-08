@@ -1,10 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.ciacm.edu" version="3.8.2" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.ciacm.CIACMEdu" version="3.8.2" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>CIACMEdu</name>
     <description>CIACM Education App</description>
     <author email="westerly.lzh@gmail.com" href="http://ciacm.com">CIACM Team</author>
     <content src="index.html" />
     <access origin="*" />
+    <allow-navigation href="http://localhost:8080/*" />
     <access launch-external="yes" origin="tel:*" />
     <access launch-external="yes" origin="mailto:*" />
     <access launch-external="yes" origin="geo:*" />
@@ -38,6 +39,11 @@
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="LoadUrlTimeoutValue" value="60000" />
     <preference name="CustomURLSchemePluginClearsAndroidIntent" value="true" />
+    <preference name="WKWebViewOnly" value="true" />
+    <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
+    <feature name="CDVWKWebViewEngine">
+        <param name="ios-package" value="CDVWKWebViewEngine" />
+    </feature>
     <feature name="StatusBar">
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
@@ -125,6 +131,23 @@
         <edit-config file="*-Info.plist" mode="merge" target="NSLocationAlwaysUsageDescription">
             <string>We need your location so you can attach it as part of your submissions.</string>
         </edit-config>
+        <edit-config file="*-Info.plist" mode="merge" target="NSLocationAlwaysUsageDescription">
+            <string>We need your location in some page( i.e. profile page) to show your location.</string>
+        </edit-config>
+        <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
+            <string>we need your camera when you try to take an image and upload to your private space.</string>
+        </edit-config>
+        <edit-config file="*-Info.plist" mode="merge" target="NSDownloadsFolderUsageDescription">
+            <string>we need your download folder so you can download files from our website, and watch such as videos offline</string>
+        </edit-config>
+        <edit-config file="*-Info.plist" mode="merge" target="NSMicrophoneUsageDescription">
+            <string>we need your microphone recorder so you can upload records to your provate space</string>
+        </edit-config>
+        <edit-config file="*-Info.plist" mode="merge" target="NSPhotoLibraryUsageDescription">
+            <string>We need photo library access to get pictures from there so you can attach them as part of your submissions.
+                this app provide a user account image and user private space, you can upload images from your  photo library as a user account image, or save the images to your private space.
+            </string>
+        </edit-config>
         <icon height="20" src="resources/ios/icon/icon-20.png" width="20" />
         <icon height="40" src="resources/ios/icon/icon-20@2x.png" width="40" />
         <icon height="60" src="resources/ios/icon/icon-20@3x.png" width="60" />
@@ -164,7 +187,7 @@
     <plugin name="cordova-plugin-badge" spec="~0.8.8" />
     <plugin name="cordova-plugin-camera" spec="~4.1.0">
         <variable name="CAMERA_USAGE_DESCRIPTION" value="We need camera access to take pictures so you can attach them as part of your submissions." />
-        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="We need photo library access to get pictures from there so you can attach them as part of your submissions." />
+        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="We need photo library access to get pictures from there so you can attach them as part of your submissions.&#xA;                this app provide a user account image and user private space, you can upload images from your  photo library as a user account image, or save the images to your private space." />
         <variable name="ANDROID_SUPPORT_V4_VERSION" value="27.+" />
     </plugin>
     <plugin name="cordova-plugin-customurlscheme" spec="~5.0.0">
@@ -187,7 +210,7 @@
     </plugin>
     <plugin name="cordova-plugin-media-capture" spec="~3.0.3">
         <variable name="CAMERA_USAGE_DESCRIPTION" value="We need camera access to take pictures so you can attach them as part of your submissions." />
-        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="We need photo library access to get pictures from there so you can attach them as part of your submissions." />
+        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="We need photo library access to get pictures from there so you can attach them as part of your submissions.&#xA;                this app provide a user account image and user private space, you can upload images from your  photo library as a user account image, or save the images to your private space." />
         <variable name="MICROPHONE_USAGE_DESCRIPTION" value="We need microphone access to record sounds so you can attach them as part of your submissions." />
     </plugin>
     <plugin name="cordova-plugin-network-information" spec="~2.0.2" />
@@ -203,6 +226,6 @@
         <variable name="FCM_VERSION" value="17.0.+" />
     </plugin>
     <plugin name="cordova-plugin-geolocation" spec="~4.0.2">
-        <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
+        <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="we need your collect your location when show your profile page" />
     </plugin>
 </widget>

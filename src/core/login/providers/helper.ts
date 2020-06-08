@@ -1205,7 +1205,7 @@ export class CoreLoginHelperProvider {
         } else if (this.appProvider.isMac()) {
             link = 'itms-apps://itunes.apple.com/app/id1255924440';
         } else if (this.platform.is('android')) {
-            link = 'market://details?id=com.ciacm.edu';
+            link = 'market://details?id=com.ciacm.CIACMEdu';
         } else if (this.platform.is('ios')) {
             link = 'itms-apps://itunes.apple.com/app/id633359593';
         }

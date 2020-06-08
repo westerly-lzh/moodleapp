@@ -1,5 +1,5 @@
 {
-    "app_id": "com.ciacm.edu",
+    "app_id": "com.ciacm.CIACMEdu",
     "appname": "CIACMEdu",
     "desktopappname": "CIACMEdu",
     "versioncode": 3820,
@@ -8,7 +8,7 @@
     "cache_update_frequency_often": 1200000,
     "cache_update_frequency_sometimes": 3600000,
     "cache_update_frequency_rarely": 43200000,
-    "default_lang": "zh-cn",
+    "default_lang": "en",
     "languages": {
         "en": "English",
         "zh-cn": "简体中文",
@@ -28,7 +28,7 @@
     "multisitesdisplay": "",
     "skipssoconfirmation": false,
     "forcedefaultlanguage": false,
-    "privacypolicy": "https:\/\/eud.ciacm.com\/local\/staticpage\/view.php?page=privacy",
+    "privacypolicy": "https:\/\/edu.ciacm.com\/local\/staticpage\/view.php?page=privacy",
     "notificoncolor": "#009fe5",
     "statusbarbg": false,
     "statusbarlighttext": false,

@@ -14,7 +14,7 @@
 
 // Based on the template node_modules/cordova-android/bin/templates/project/Activity.java
 
-package com.ciacm.edu;
+package com.ciacm.CIACMEdu;
 
 import android.os.Bundle;
 import android.view.KeyEvent;

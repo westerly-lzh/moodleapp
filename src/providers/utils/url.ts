@@ -242,16 +242,21 @@ export class CoreUrlUtilsProvider {
      */
     getDocsUrl(release?: string, page: string = 'Mobile_app'): Promise<string> {
         var docsUrl = 'https://edu.ciacm.com/local/staticpage/view.php?page=doc';
-        // let docsUrl = 'https://docs.moodle.org/en/' + page;
-
-        // if (typeof release != 'undefined') {
-        //     const version = release.substr(0, 3).replace('.', '');
-        //     // Check is a valid number.
-        //     if (parseInt(version) >= 24) {
-        //         // Append release number.
-        //         docsUrl = docsUrl.replace('https://docs.moodle.org/', 'https://docs.moodle.org/' + version + '/');
-        //     }
-        // }
+        /**
+         * 
+         * let docsUrl = 'https://docs.moodle.org/en/' + page;
+         *
+         *  if (typeof release != 'undefined') {
+         * const version = release.substr(0, 3).replace('.', '');
+         *  // Check is a valid number.
+         * if (parseInt(version) >= 24) {
+                // Append release number.
+         *      docsUrl = docsUrl.replace('https://docs.moodle.org/', 'https://docs.moodle.org/' + version + '/');
+         *   }
+         * }
+         * 
+         */
+        
 
         return this.langProvider.getCurrentLanguage().then((lang) => {
             return docsUrl.replace('/en/', '/' + lang + '/');
