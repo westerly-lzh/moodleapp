@@ -1,11 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.ciacm.CIACMEdu" version="3.8.2" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.ciacm.CIACMEdu" version="3.8.5" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>CIACMEdu</name>
     <description>CIACM Education App</description>
     <author email="westerly.lzh@gmail.com" href="http://ciacm.com">CIACM Team</author>
     <content src="index.html" />
     <access origin="*" />
+    <allow-navigation href="http://127.0.0.1" />
     <allow-navigation href="http://localhost:8080/*" />
+    <allow-navigation href="http://vimeo.com/*" />
+    <allow-navigation href="https://vimeo.com/*" />
+    <allow-navigation href="https://player.vimeo.com/*" />
+    <allow-navigation href="http://player.vimeo.com/*" />
+    <allow-navigation href="http://edu.ciacm.com/*" />
+    <allow-navigation href="https://edu.ciacm.com/*" />
     <access launch-external="yes" origin="tel:*" />
     <access launch-external="yes" origin="mailto:*" />
     <access launch-external="yes" origin="geo:*" />
