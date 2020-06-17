@@ -1,3 +1,4 @@
+import { WebView } from '@ionic-native/ionic-webview/ngx';
 // (C) Copyright 2015 Moodle Pty Ltd.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -299,7 +300,7 @@ export const WP_PROVIDER: any = null;
         AddonQbehaviourModule,
         AddonQtypeModule,
         AddonStorageManagerModule,
-        AddonFilterModule
+        AddonFilterModule,
     ],
     bootstrap: [IonicApp],
     entryComponents: [
@@ -335,6 +336,7 @@ export const WP_PROVIDER: any = null;
         CoreFileHelperProvider,
         CoreCustomURLSchemesProvider,
         CoreSiteInfoCronHandler,
+        WebView,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: CoreInterceptor,

@@ -870,12 +870,15 @@ export class CoreWSProvider {
      */
     async getText(url: string): Promise<string> {
         // Fetch the URL content.
+        let win:any = window;
+        url = win.Ionic.WebView.convertFileSrc(url);
         const content = await this.http.get(url, { responseType: 'text' }).toPromise();
-        if (typeof content !== 'string') {
-            return Promise.reject(null);
-        }
-
-        return content;
+            if (typeof content !== 'string') {
+                return Promise.reject(null);
+            }
+    
+            return content;
+        
     }
 }
 
