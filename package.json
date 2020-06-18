@@ -1,6 +1,6 @@
 {
   "name": "edu",
-  "version": "3.8.2",
+  "version": "3.8.7",
   "description": "CIACMEdu App",
   "author": {
     "name": "CIACMEdu",
@@ -235,7 +235,7 @@
       "category": "public.app-category.education",
       "icon": "resources/desktop/icon.icns",
       "target": "mas",
-      "bundleVersion": "3.8.2",
+      "bundleVersion": "3.8.7",
       "extendInfo": {
         "ElectronTeamID": "2NU57U5PAW"
       }

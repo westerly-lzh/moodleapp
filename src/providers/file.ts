@@ -1,3 +1,4 @@
+import { Device } from '@ionic-native/device';
 // (C) Copyright 2015 Moodle Pty Ltd.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -64,11 +65,11 @@ export class CoreFileProvider {
     protected isHTMLAPI = false;
     protected CHUNK_SIZE = 10485760; // 10 MB.
 
-    constructor(logger: CoreLoggerProvider, private platform: Platform, private file: File, private appProvider: CoreAppProvider,
+    constructor(logger: CoreLoggerProvider, private device:Device/*private platform: Platform*/, private file: File, private appProvider: CoreAppProvider,
             private textUtils: CoreTextUtilsProvider, private zip: Zip, private mimeUtils: CoreMimetypeUtilsProvider) {
         this.logger = logger.getInstance('CoreFileProvider');
-
-        if (platform.is('android') && !Object.getOwnPropertyDescriptor(FileReader.prototype, 'onloadend')) {
+                
+        if (/*platform.is('android')*/ device.platform==='Android' && !Object.getOwnPropertyDescriptor(FileReader.prototype, 'onloadend')) {
             // Cordova File plugin creates some getters and setter for FileReader, but Ionic's polyfills override them in Android.
             // Create the getters and setters again. This code comes from FileReader.js in cordova-plugin-file.
             this.defineGetterSetter(FileReader.prototype, 'readyState', function(): any {
@@ -161,22 +162,32 @@ export class CoreFileProvider {
         if (this.initialized) {
             return Promise.resolve();
         }
+        if(this.device.platform ==='Android'){
+            this.basePath = this.file.externalApplicationStorageDirectory || this.basePath;
+        }else if(this.device.platform ==='iOS'){
+            this.basePath = this.file.documentsDirectory || this.basePath;
+        }else if(!this.isAvailable() || this.basePath === ''){
+            this.logger.error('Error getting device OS.');
+            return Promise.reject(null);
+        }
+        this.initialized = true;
+        this.logger.debug('FS initialized: ' + this.basePath);
+        // let that = this;
+        // return this.platform.ready().then(() => {
 
-        return this.platform.ready().then(() => {
+        //     if (that.platform.is('android')) {
+        //         that.basePath = that.file.externalApplicationStorageDirectory || that.basePath;
+        //     } else if (that.platform.is('ios')) {
+        //         that.basePath = that.file.documentsDirectory || that.basePath;
+        //     } else if (!that.isAvailable() || that.basePath === '') {
+        //         that.logger.error('Error getting device OS.');
 
-            if (this.platform.is('android')) {
-                this.basePath = this.file.externalApplicationStorageDirectory || this.basePath;
-            } else if (this.platform.is('ios')) {
-                this.basePath = this.file.documentsDirectory || this.basePath;
-            } else if (!this.isAvailable() || this.basePath === '') {
-                this.logger.error('Error getting device OS.');
+        //         return Promise.reject(null);
+        //     }
 
-                return Promise.reject(null);
-            }
-
-            this.initialized = true;
-            this.logger.debug('FS initialized: ' + this.basePath);
-        });
+        //     that.initialized = true;
+        //     that.logger.debug('FS initialized: ' + that.basePath);
+        // });
     }
 
     /**
@@ -461,10 +472,13 @@ export class CoreFileProvider {
      */
     calculateFreeSpace(): Promise<number> {
         return this.file.getFreeDiskSpace().then((size) => {
-            if (this.platform.is('ios')) {
-                // In iOS the size is in bytes.
+            if(this.device.platform==='iOS'){
                 return Number(size);
             }
+            // if (this.platform.is('ios')) {
+            //     // In iOS the size is in bytes.
+            //     return Number(size);
+            // }
 
             // The size is in KB, convert it to bytes.
             return Number(size) * 1024;
@@ -725,15 +739,22 @@ export class CoreFileProvider {
      */
     getBasePathToDownload(): Promise<string> {
         return this.init().then(() => {
-            if (this.platform.is('ios')) {
-                // In iOS we want the internal URL (cdvfile://localhost/persistent/...).
+            if(this.device.platform==='iOS'){
                 return this.file.resolveDirectoryUrl(this.basePath).then((dirEntry) => {
                     return dirEntry.toInternalURL();
                 });
-            } else {
-                // In the other platforms we use the basePath as it is (file://...).
+            }else{
                 return this.basePath;
             }
+            // if (this.platform.is('ios')) {
+            //     // In iOS we want the internal URL (cdvfile://localhost/persistent/...).
+            //     return this.file.resolveDirectoryUrl(this.basePath).then((dirEntry) => {
+            //         return dirEntry.toInternalURL();
+            //     });
+            // } else {
+            //     // In the other platforms we use the basePath as it is (file://...).
+            //     return this.basePath;
+            // }
         });
     }
 
